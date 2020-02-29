@@ -1,0 +1,8 @@
+.right-board {
+    width: 330px;
+    height: 500px;
+    float: right;
+    margin-right: 33px;
+    border: 3px solid #e5e6e8fa;
+    border-radius: 0 15px 15px 0;
+}

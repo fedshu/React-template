@@ -1,0 +1,25 @@
+.search {
+    text-align: center;
+}
+
+.search input {
+    width: 90%;
+    border: none;
+    height: 30px;
+    border-radius: 50px;
+    margin: 20px 0;
+    outline: none;
+    padding-left: 10px;
+    border: 3px solid #e5e6e8fa;
+    font-size: 16px;
+    font-weight: bold;
+    color: #868686;
+}
+
+.search input:focus {
+    border-color: #868686;
+}
+
+::placeholder {
+    color: #e5e6e8fa;
+}

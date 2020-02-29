@@ -1,0 +1,8 @@
+.SectionElem {
+    display: flex;
+    cursor: pointer;
+}
+
+.SectionElem:hover {
+    background: #e5e6e8fa;
+}

@@ -1,0 +1,19 @@
+.arrow {
+    text-align: center;
+}
+
+.arrow button {
+    transition: all 0.2s;
+    font-size: 36px;
+    color: #e5e6e8fa;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.arrow button:hover {
+    color: #868686;
+}
+
+
