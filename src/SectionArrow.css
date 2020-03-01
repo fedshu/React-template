@@ -1,5 +1,9 @@
 .arrow {
     text-align: center;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .arrow button {
@@ -16,4 +20,7 @@
     color: #868686;
 }
 
+.arrow .toLeft {
+    transform: rotate(180deg);
+}
 

@@ -1,9 +1,0 @@
-.arrows { 
-    float: left;
-    height: 100px;
-    width: 62px;
-    height: 465px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
