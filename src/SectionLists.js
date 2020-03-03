@@ -36,8 +36,20 @@ class SectionList extends React.Component {
         return (
             <div>
                 <div>
-                    <SectionBoard isMove={isMove} users={users}/>
+                    <SectionBoard>
+                        <div className="left-board">
+                            <SectionElem users={users} onClickAction={this.onClickAction} />
+                        </div>
+                    </SectionBoard>
                 </div>
+                <div>
+                    <SectionBoard>
+                        <div className="right-board">
+                            <SectionElem users={users} onClickAction={this.onClickAction} />
+                        </div>
+                    </SectionBoard>
+                </div>
+
                 <div className="arrow">
                     <div className="toRight">
                         <SectionArrow onChangeDirection={this.handleRightChange} />
