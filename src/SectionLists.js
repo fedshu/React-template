@@ -14,20 +14,10 @@ let userList = [
 class SectionList extends React.Component {
     constructor(props) {
         super(props);
-        this.handleRightChange = this.handleRightChange.bind(this);
-        this.handleLeftChange = this.handleLeftChange.bind(this);
         this.state = {
             isMove: false,
             users: userList
         };
-    }
-
-    handleRightChange() {
-        this.setState({isMove: true});
-    }
-
-    handleLeftChange() {
-        this.setState({isMove: false});
     }
 
     render() {
