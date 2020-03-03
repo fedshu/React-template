@@ -3,6 +3,11 @@ import './SectionBoard.css'
 import SectionElem from './SectionElem';
 
 class SectionBoard extends React.Component {
+
+    onClickAction () {
+        console.log('clicked');
+    }
+
     render() {
         const isMove = this.props.isMove;
         const users = this.props.users;
@@ -12,7 +17,7 @@ class SectionBoard extends React.Component {
         return (
             <div>
                 <div className="left-board">
-                    <SectionElem users={users} />
+                    <SectionElem users={users} onClickAction={this.onClickAction} />
                 </div>
                 <div className="right-board">
                 </div>

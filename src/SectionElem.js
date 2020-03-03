@@ -9,11 +9,11 @@ class SectionElem extends React.Component {
 
     render() {
         const users = this.props.users;
-        });
+
         
 
         return (
-            <div className="SectionElem">
+            <div className="SectionElem" onClick={this.props.onClickAction}>
                 <div className="SectionPhoto">
                     <img alt='user'/>
                 </div>
