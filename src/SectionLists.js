@@ -2,6 +2,7 @@ import React from 'react';
 import './SectionBoard.css';
 import SectionBoard from './SectionBoard.js';
 import SectionArrow from './SectionArrow.js'
+import SectionElem from './SectionElem';
 
 let userList = [
     {photo: 'https://www.google.com/search?q=avatar+icon&tbm=isch&source=iu&ictx=1&fir=yDb-3EkFx2S5iM%253A%252C5naQRIzjfKOHcM%252C_&vet=1&usg=AI4_-kTZd7Xggu5T4zWzdn_kvrpZQhQ_DQ&sa=X&ved=2ahUKEwj1u8iHkPznAhWgSxUIHbxuAIUQ9QEwDnoECAoQNg#imgrc=yDb-3EkFx2S5iM:',
@@ -13,20 +14,10 @@ let userList = [
 class SectionList extends React.Component {
     constructor(props) {
         super(props);
-        this.handleRightChange = this.handleRightChange.bind(this);
-        this.handleLeftChange = this.handleLeftChange.bind(this);
         this.state = {
             isMove: false,
             users: userList
         };
-    }
-
-    handleRightChange() {
-        this.setState({isMove: true});
-    }
-
-    handleLeftChange() {
-        this.setState({isMove: false});
     }
 
     render() {
@@ -36,8 +27,20 @@ class SectionList extends React.Component {
         return (
             <div>
                 <div>
-                    <SectionBoard isMove={isMove} users={users}/>
+                    <SectionBoard>
+                        <div className="left-board">
+                            <SectionElem users={users} onClickAction={this.onClickAction} />
+                        </div>
+                    </SectionBoard>
                 </div>
+                <div>
+                    <SectionBoard>
+                        <div className="right-board">
+                            <SectionElem users={users} onClickAction={this.onClickAction} />
+                        </div>
+                    </SectionBoard>
+                </div>
+
                 <div className="arrow">
                     <div className="toRight">
                         <SectionArrow onChangeDirection={this.handleRightChange} />
