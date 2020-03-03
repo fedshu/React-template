@@ -27,18 +27,10 @@ class SectionList extends React.Component {
         return (
             <div>
                 <div>
-                    <SectionBoard>
-                        <div className="left-board">
-                            <SectionElem users={users} onClickAction={this.onClickAction} />
-                        </div>
-                    </SectionBoard>
+                    <SectionBoard />
                 </div>
                 <div>
-                    <SectionBoard>
-                        <div className="right-board">
-                            <SectionElem users={users} onClickAction={this.onClickAction} />
-                        </div>
-                    </SectionBoard>
+                    <SectionBoard />
                 </div>
 
                 <div className="arrow">
