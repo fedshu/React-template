@@ -8,17 +8,14 @@ class SectionElem extends React.Component {
     }
 
     render() {
-        const users = this.props.users;
-
-        
 
         return (
             <div className="SectionElem" onClick={this.props.onClickAction}>
                 <div className="SectionPhoto">
-                    <img alt='user'/>
+                    <img src={this.props.user.photo} alt='user'/>
                 </div>
                 <div className="SectionName">
-                    <h3>Name LastName</h3>
+                    <h3>{this.props.user.name}</h3>
                 </div>
             </div>
         );

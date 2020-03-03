@@ -12,7 +12,7 @@ class SectionBoard extends React.Component {
         return (
             <div>
                 <div className="left-board">
-                    <SectionElem onClickAction={this.onClickAction} />
+                    {this.props.users.map(u => <SectionElem user={u} onClickAction={this.onClickAction} />)}
                 </div>
             </div>
         );

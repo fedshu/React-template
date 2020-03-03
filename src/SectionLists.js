@@ -14,23 +14,23 @@ let userList = [
 class SectionList extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            isMove: false,
-            users: userList
-        };
+            leftUsers: userList,
+            rightUsers: []
+        }
+
     }
 
     render() {
-        const isMove = this.state.isMove;
-        const users = this.state.users;
 
         return (
             <div>
                 <div>
-                    <SectionBoard />
+                    <SectionBoard users={this.state.leftUsers}/>
                 </div>
                 <div>
-                    <SectionBoard />
+                    <SectionBoard users={this.state.rightUsers}/>
                 </div>
 
                 <div className="arrow">
