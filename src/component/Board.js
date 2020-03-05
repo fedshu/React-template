@@ -11,9 +11,7 @@ class SectionBoard extends React.Component {
     render() {
         return (
             <div>
-                <div className="left-board">
-                    {this.props.users.map(u => <SectionElem user={u} onClickAction={this.onClickAction} />)}
-                </div>
+                {this.props.users.map(u => <SectionElem user={u} onClickAction={this.onClickAction} />)}
             </div>
         );
     }

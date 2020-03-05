@@ -7,12 +7,8 @@ class SectionWrapper extends React.Component {
     render() {
         return (
             <div className="section-1">
-                <div>
-                    <SectionSearch />
-                </div>
-                <div>
-                    <SectionList />
-                </div>
+                <SectionSearch />
+                <SectionList />
             </div>
         );
     }
