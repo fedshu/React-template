@@ -1,7 +1,7 @@
 import React from 'react';
-import './SectionWrapper.css';
-import SectionSearch from './SectionSearch.js';
-import SectionList from './SectionLists.js';
+import '../css/Wrapper.css';
+import SectionSearch from './Search.js';
+import SectionList from './Lists.js';
 
 class SectionWrapper extends React.Component {
     render() {
