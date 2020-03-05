@@ -1,6 +1,6 @@
 import React from 'react';
-import './SectionBoard.css'
-import SectionElem from './SectionElem';
+import '../css/Board.css'
+import SectionElem from './Elem';
 
 class SectionBoard extends React.Component {
 
@@ -10,7 +10,7 @@ class SectionBoard extends React.Component {
 
     render() {
         return (
-            <div className="left-board">
+            <div>
                 {this.props.users.map(u => <SectionElem user={u} onClickAction={this.onClickAction} />)}
             </div>
         );

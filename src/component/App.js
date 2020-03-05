@@ -1,6 +1,6 @@
 import React from 'react';
-import SectionWrapper from './SectionWrapper.js';
-import './App.css';
+import SectionWrapper from './Wrapper.js';
+import '../css/App.css';
 
 function App() {
   return (

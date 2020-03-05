@@ -1,5 +1,5 @@
 import React from 'react';
-import './SectionSearch.css'
+import '../css/Search.css'
 
 function SectionSearch() {
     return (

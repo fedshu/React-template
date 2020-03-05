@@ -1,5 +1,5 @@
 import React from 'react';
-import './SectionElem.css';
+import '../css/Elem.css';
 
 class SectionElem extends React.Component {
     render() {

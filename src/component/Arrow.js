@@ -1,5 +1,5 @@
 import React from 'react';
-import './SectionArrow.css'
+import '../css/Arrow.css'
 
 class SectionArrow extends React.Component {
     constructor(props) {
