@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/Elem.css';
 
 class SectionElem extends React.Component {
-
     render() {
         
         return (
