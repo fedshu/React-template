@@ -25,13 +25,13 @@ class SectionList extends React.Component {
         }
     }
 
-    hadleClickElem = (id) => {
-        this.setState({ selection: id });
+    hadleClickElem = (id, sel) => {
+        this.setState({ selection: sel ? id : null });
     }
 
 
     handleDirection = (isRightDirrection) => {
-        
+
         if (!this.state.selection) {
             return;
         }
@@ -42,8 +42,7 @@ class SectionList extends React.Component {
                     u.isRight = !u.isRight;
                 }
                 return u;
-            }),
-            selection: null
+            })
         });
     }
 
