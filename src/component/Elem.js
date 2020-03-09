@@ -2,10 +2,23 @@ import React from 'react';
 import '../css/Elem.css';
 
 class SectionElem extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            selected: false
+        }
+    }
+    
+    onClickHandler = () => {
+        this.setState({selected: !this.state.selected});
+        this.props.onClickAction(this.props.user.id);
+    }
+
     render() {
         
         return (
-            <div className="SectionElem" onClick={this.props.onClickAction}>
+            <div className="SectionElem" style={this.state.selected ? {background: 'yellow'} : {}} onClick={this.onClickHandler}>
                 <div className="SectionPhoto">
                     <img src={this.props.user.photo} alt='user'/>
                 </div>
