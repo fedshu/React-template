@@ -8,7 +8,7 @@ class SectionArrow extends React.Component {
     }
 
     handleChange(e) {
-        this.props.onChangeDirection(e.target.value);
+        this.props.onChangeDirection(e);
     }
 
     render() {

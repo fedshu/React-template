@@ -4,7 +4,7 @@ import '../css/Elem.css';
 class SectionElem extends React.Component {
 
     render() {
-
+        
         return (
             <div className="SectionElem" onClick={this.props.onClickAction}>
                 <div className="SectionPhoto">
