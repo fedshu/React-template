@@ -5,10 +5,14 @@ import SectionArrow from './Arrow.js';
 import SectionElem from './Elem';
 
 let userList = [
-    {id: 1, photo: 'https://www.google.com/search?q=avatar+icon&tbm=isch&source=iu&ictx=1&fir=yDb-3EkFx2S5iM%253A%252C5naQRIzjfKOHcM%252C_&vet=1&usg=AI4_-kTZd7Xggu5T4zWzdn_kvrpZQhQ_DQ&sa=X&ved=2ahUKEwj1u8iHkPznAhWgSxUIHbxuAIUQ9QEwDnoECAoQNg#imgrc=yDb-3EkFx2S5iM:',
-    name: 'Sam Fisher', isRight: false},
-    {id: 2, photo: 'https://www.google.com/search?q=avatar+icon&tbm=isch&source=iu&ictx=1&fir=yDb-3EkFx2S5iM%253A%252C5naQRIzjfKOHcM%252C_&vet=1&usg=AI4_-kTZd7Xggu5T4zWzdn_kvrpZQhQ_DQ&sa=X&ved=2ahUKEwj1u8iHkPznAhWgSxUIHbxuAIUQ9QEwDnoECAoQNg#imgrc=yDb-3EkFx2S5iM:',
-    name: 'John Gatsby', isRight: false},
+    {
+        id: 1, photo: 'http://icons.iconarchive.com/icons/diversity-avatars/avatars/64/batman-icon.png',
+        name: 'Sam Fisher', isRight: false
+    },
+    {
+        id: 2, photo: 'http://icons.iconarchive.com/icons/diversity-avatars/avatars/64/batman-icon.png',
+        name: 'John Gatsby', isRight: false
+    },
 ];
 
 class SectionList extends React.Component {
@@ -22,7 +26,7 @@ class SectionList extends React.Component {
     }
 
     hadleClickLeftElem = (id) => {
-        this.setState({selection: id });
+        this.setState({ selection: id });
     }
 
     // hadleClickRightElem() {
@@ -34,12 +38,15 @@ class SectionList extends React.Component {
         if (!this.state.selection) {
             return;
         }
-        this.setState({users: this.state.users.map(u => {
-           if (u.id === this.state.selection) {
-               u.isRight = !u.isRight;
-           }
-           return u;
-        })});
+        this.setState({
+            users: this.state.users.map(u => {
+                if (u.id === this.state.selection) {
+                    u.isRight = !u.isRight;
+                }
+                return u;
+            }),
+            selection: null
+        });
     }
 
     handleToLeftDirection = () => {
@@ -47,12 +54,15 @@ class SectionList extends React.Component {
             return;
         }
 
-        this.setState({users: this.state.users.map(u => {
-            if ( u.id === this.state.selection) {
-                u.isRight = !u.isRight;
-            }
-            return u;
-        })});
+        this.setState({
+            users: this.state.users.map(u => {
+                if (u.id === this.state.selection) {
+                    u.isRight = !u.isRight;
+                }
+                return u;
+            }),
+            selection: null
+        });
     }
 
 
@@ -78,7 +88,7 @@ class SectionList extends React.Component {
                     <div className="toLeft">
                         <SectionArrow onChangeDirection={this.handleToLeftDirection} />
                     </div>
-                </div>            
+                </div>
             </div>
         );
     }
