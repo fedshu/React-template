@@ -25,22 +25,20 @@ class SectionList extends React.Component {
         }
     }
 
-    hadleClickLeftElem = (id) => {
+    hadleClickElem = (id) => {
         this.setState({ selection: id });
     }
 
-    // hadleClickRightElem() {
 
-    // }
-
-    handleToRightDirection = () => {
-
+    handleDirection = (isRightDirrection) => {
+        
         if (!this.state.selection) {
             return;
         }
+
         this.setState({
             users: this.state.users.map(u => {
-                if (u.id === this.state.selection) {
+                if (u.id === this.state.selection && isRightDirrection !== u.isRight) {
                     u.isRight = !u.isRight;
                 }
                 return u;
@@ -48,23 +46,6 @@ class SectionList extends React.Component {
             selection: null
         });
     }
-
-    handleToLeftDirection = () => {
-        if (!this.state.selection) {
-            return;
-        }
-
-        this.setState({
-            users: this.state.users.map(u => {
-                if (u.id === this.state.selection) {
-                    u.isRight = !u.isRight;
-                }
-                return u;
-            }),
-            selection: null
-        });
-    }
-
 
     render() {
 
@@ -72,21 +53,21 @@ class SectionList extends React.Component {
             <div>
                 <div className="left-board">
                     <SectionBoard>
-                        {this.state.users.map(u => !u.isRight ? <SectionElem key={u.id} user={u} onClickAction={this.hadleClickLeftElem} /> : null)}
+                        {this.state.users.map(u => !u.isRight ? <SectionElem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
                     </SectionBoard>
                 </div>
                 <div className="right-board">
-                    <SectionBoard users={this.state.rightUsers} onClickAction={this.hadleClickRightElem}>
-                        {this.state.users.map(u => u.isRight ? <SectionElem key={u.id} user={u} onClickAction={this.hadleClickLeftElem} /> : null)}
+                    <SectionBoard>
+                        {this.state.users.map(u => u.isRight ? <SectionElem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
                     </SectionBoard>
                 </div>
 
                 <div className="arrow">
                     <div className="toRight">
-                        <SectionArrow onChangeDirection={this.handleToRightDirection} />
+                        <SectionArrow onChangeDirection={() => {this.handleDirection(true)}} />
                     </div>
                     <div className="toLeft">
-                        <SectionArrow onChangeDirection={this.handleToLeftDirection} />
+                        <SectionArrow onChangeDirection={() => {this.handleDirection(false)}} />
                     </div>
                 </div>
             </div>
