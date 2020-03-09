@@ -24,10 +24,10 @@ class SectionList extends React.Component {
 
         return (
             <div>
-                <div  className="left-board">
+                <div className="left-board">
                     <SectionBoard users={this.state.leftUsers}/>
                 </div>
-                <div  className="right-board">
+                <div className="right-board">
                     <SectionBoard users={this.state.rightUsers}/>
                 </div>
 
