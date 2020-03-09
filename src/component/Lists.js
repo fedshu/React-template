@@ -13,10 +13,10 @@ let userList = [
 class SectionList extends React.Component {
     constructor(props) {
         super(props);
-        this.handleToRightDirection = this.handleToRightDirection.bind(this);
-        this.handleToLeftDirection = this.handleToLeftDirection.bind(this);
-        this.hadleClickLeftElem = this.hadleClickLeftElem.bind(this);
-        this.hadleClickRightElem = this.hadleClickRightElem.bind(this);
+        // this.handleToRightDirection = this.handleToRightDirection.bind(this);
+        // this.handleToLeftDirection = this.handleToLeftDirection.bind(this);
+        // this.hadleClickLeftElem = this.hadleClickLeftElem.bind(this);
+        // this.hadleClickRightElem = this.hadleClickRightElem.bind(this);
 
         this.state = {
             toLeftMove: true,
