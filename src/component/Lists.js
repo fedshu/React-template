@@ -15,8 +15,8 @@ class SectionList extends React.Component {
         super(props);
         // this.handleToRightDirection = this.handleToRightDirection.bind(this);
         // this.handleToLeftDirection = this.handleToLeftDirection.bind(this);
-        // this.hadleClickLeftElem = this.hadleClickLeftElem.bind(this);
-        // this.hadleClickRightElem = this.hadleClickRightElem.bind(this);
+        this.hadleClickLeftElem = this.hadleClickLeftElem.bind(this);
+        this.hadleClickRightElem = this.hadleClickRightElem.bind(this);
 
         this.state = {
             toLeftMove: true,
@@ -26,6 +26,15 @@ class SectionList extends React.Component {
             elem: {},
         }
     }
+
+    hadleClickLeftElem() {
+
+    }
+
+    hadleClickRightElem() {
+
+    }
+
 
     render() {
         let toRightMove = this.state.toRightMove;
@@ -43,10 +52,10 @@ class SectionList extends React.Component {
         return (
             <div>
                 <div className="left-board">
-                    <SectionBoard users={this.state.leftUsers}/>
+                    <SectionBoard users={this.state.leftUsers} onClickAction={this.hadleClickLeftElem} />
                 </div>
                 <div className="right-board">
-                    <SectionBoard users={this.state.rightUsers}/>
+                    <SectionBoard users={this.state.rightUsers} onClickAction={this.hadleClickRightElem}/>
                 </div>
 
                 <div className="arrow">
