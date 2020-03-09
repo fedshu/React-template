@@ -25,27 +25,6 @@ class SectionList extends React.Component {
             rightUsers: [],
             elem: {},
         }
-<<<<<<< HEAD
-    }
-
-    hadleClickRightElem(e) {
-        console.log(e);
-    }
-
-    hadleClickLeftElem(e) {
-        console.log(e);
-    }
-
-    handleToRightDirection() {
-        this.setState({toLeftMove: false, toRightMove: true});
-        console.log(this.state);
-    }
-
-    handleToLeftDirection() {
-        this.setState({toLeftMove: true, toRightMove: false});
-        console.log(this.state);
-=======
->>>>>>> 0f8cea4167b83b6571c438029f884640c42b5874
     }
 
     render() {
@@ -64,17 +43,10 @@ class SectionList extends React.Component {
         return (
             <div>
                 <div className="left-board">
-<<<<<<< HEAD
-                    <SectionBoard users={this.state.leftUsers} onClickAction={this.hadleClickLeftElem}/>
-                </div>
-                <div className="right-board">
-                    <SectionBoard users={this.state.rightUsers} onClickAction={this.hadleClickRightElem}/>
-=======
                     <SectionBoard users={this.state.leftUsers}/>
                 </div>
                 <div className="right-board">
                     <SectionBoard users={this.state.rightUsers}/>
->>>>>>> 0f8cea4167b83b6571c438029f884640c42b5874
                 </div>
 
                 <div className="arrow">
