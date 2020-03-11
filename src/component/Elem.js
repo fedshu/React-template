@@ -9,10 +9,9 @@ class Elem extends React.Component {
             selected: false
         }
     }
-    
+
     onClickHandler = () => {
-        this.setState({selected: !this.state.selected});
-        this.props.onClickAction(this.props.user.id);
+        this.setState({selected: !this.state.selected}, () => {this.props.onClickAction(this.props.user.id, this.state.selected)});
     }
 
     render() {

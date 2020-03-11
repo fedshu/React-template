@@ -25,8 +25,8 @@ class List extends React.Component {
         }
     }
 
-    hadleClickElem = (id) => {
-        this.setState({ selection: id });
+    hadleClickElem = (id, sel) => {
+        this.setState({ selection: sel ? id : null });
     }
 
 
@@ -41,8 +41,7 @@ class List extends React.Component {
                     u.isRight = !u.isRight;
                 }
                 return u;
-            }),
-            selection: null
+            })
         });
     }
 
