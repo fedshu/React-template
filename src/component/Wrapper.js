@@ -1,17 +1,17 @@
 import React from 'react';
 import '../css/Wrapper.css';
-import SectionSearch from './Search.js';
-import SectionList from './Lists.js';
+import Search from './Search.js';
+import List from './Lists.js';
 
-class SectionWrapper extends React.Component {
+class Wrapper extends React.Component {
     render() {
         return (
             <div className="section-1">
-                <SectionSearch />
-                <SectionList />
+                <Search />
+                <List />
             </div>
         );
     }
 }
 
-export default SectionWrapper;
+export default Wrapper;

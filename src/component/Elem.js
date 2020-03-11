@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Elem.css';
 
-class SectionElem extends React.Component {
+class Elem extends React.Component {
 
     constructor(props) {
         super(props);
@@ -30,4 +30,4 @@ class SectionElem extends React.Component {
     }
 }
 
-export default SectionElem;
+export default Elem;

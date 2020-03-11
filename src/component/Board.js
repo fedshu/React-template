@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Board.css'
 
 
-class SectionBoard extends React.Component {
+class Board extends React.Component {
 
     render() {
         return (
@@ -13,4 +13,4 @@ class SectionBoard extends React.Component {
     }
 }
 
-export default SectionBoard;
+export default Board;

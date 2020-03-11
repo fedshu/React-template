@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Arrow.css'
 
-class SectionArrow extends React.Component {
+class Arrow extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
@@ -20,4 +20,4 @@ class SectionArrow extends React.Component {
     }
 }
 
-export default SectionArrow;
+export default Arrow;

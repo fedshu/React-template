@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Search.css'
 
-function SectionSearch() {
+function Search() {
     return (
         <div className="search">
             <input type="text" placeholder="Enter Name" />
@@ -9,4 +9,4 @@ function SectionSearch() {
     )
 }
 
-export default SectionSearch;
+export default Search;

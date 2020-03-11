@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/Board.css';
-import SectionBoard from './Board.js';
-import SectionArrow from './Arrow.js';
-import SectionElem from './Elem';
+import Board from './Board.js';
+import Arrow from './Arrow.js';
+import Elem from './Elem';
 
 let userList = [
     {
@@ -15,7 +15,7 @@ let userList = [
     },
 ];
 
-class SectionList extends React.Component {
+class List extends React.Component {
     constructor(props) {
         super(props);
 
@@ -31,7 +31,6 @@ class SectionList extends React.Component {
 
 
     handleDirection = (isRightDirrection) => {
-        
         if (!this.state.selection) {
             return;
         }
@@ -52,22 +51,22 @@ class SectionList extends React.Component {
         return (
             <div>
                 <div className="left-board">
-                    <SectionBoard>
-                        {this.state.users.map(u => !u.isRight ? <SectionElem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
-                    </SectionBoard>
+                    <Board>
+                        {this.state.users.map(u => !u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
+                    </Board>
                 </div>
                 <div className="right-board">
-                    <SectionBoard>
-                        {this.state.users.map(u => u.isRight ? <SectionElem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
-                    </SectionBoard>
+                    <Board>
+                        {this.state.users.map(u => u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
+                    </Board>
                 </div>
 
                 <div className="arrow">
                     <div className="toRight">
-                        <SectionArrow onChangeDirection={() => {this.handleDirection(true)}} />
+                        <Arrow onChangeDirection={() => {this.handleDirection(true)}} />
                     </div>
                     <div className="toLeft">
-                        <SectionArrow onChangeDirection={() => {this.handleDirection(false)}} />
+                        <Arrow onChangeDirection={() => {this.handleDirection(false)}} />
                     </div>
                 </div>
             </div>
@@ -75,4 +74,4 @@ class SectionList extends React.Component {
     }
 }
 
-export default SectionList;
+export default List;
