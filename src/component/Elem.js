@@ -15,14 +15,13 @@ class Elem extends React.Component {
     }
 
     render() {
-        
         return (
             <div className="SectionElem" style={this.state.selected ? {background: 'yellow'} : {}} onClick={this.onClickHandler}>
                 <div className="SectionPhoto">
-                    <img src={this.props.user.photo} alt='user'/>
+                    <img src={this.props.user.photo_100} alt='user'/>
                 </div>
                 <div className="SectionName">
-                    <h3>{this.props.user.name}</h3>
+                    <h3>{this.props.user.first_name}{this.props.user.last_name}</h3>
                 </div>
             </div>
         );

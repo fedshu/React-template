@@ -8,7 +8,7 @@ class Arrow extends React.Component {
     }
 
     handleChange(e) {
-        this.props.onChangeDirection(e);
+        this.props.onChangeDirection();
     }
 
     render() {

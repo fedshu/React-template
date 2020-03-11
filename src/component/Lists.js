@@ -21,7 +21,7 @@ class List extends React.Component {
 
         this.state = {
             selection: null,
-            users: userList
+            users: this.props.users
         }
     }
 
@@ -41,22 +41,23 @@ class List extends React.Component {
                     u.isRight = !u.isRight;
                 }
                 return u;
-            })
+            }),
+            selection: null
         });
     }
 
     render() {
-
         return (
+
             <div>
                 <div className="left-board">
                     <Board>
-                        {this.state.users.map(u => !u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
+                        {this.props.users.map(u => !u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
                     </Board>
                 </div>
                 <div className="right-board">
                     <Board>
-                        {this.state.users.map(u => u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
+                        {this.props.users.map(u => u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
                     </Board>
                 </div>
 

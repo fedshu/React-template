@@ -10,10 +10,12 @@
     float: left;
     margin-left: 33px;
     border-radius: 15px 0px 0 15px;
+    overflow: auto;
 }
 
 .right-board {
     float: right;
     margin-right: 33px;
     border-radius: 0px 15px 15px 0px;
+    overflow: auto;
 }
