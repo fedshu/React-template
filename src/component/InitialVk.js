@@ -15,7 +15,7 @@ class Initial extends React.Component {
 
 auth() {
     VK.init({
-        apiId: 7354891
+        apiId: 7356269
       });
 
     return new Promise( (resolve, reject) => {
