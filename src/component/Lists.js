@@ -1,8 +1,8 @@
 import React from 'react';
-import '../css/Board.css';
 import Board from './Board.js';
 import Arrow from './Arrow.js';
 import Elem from './Elem';
+import '../css/Board.css';
 
 class List extends React.Component {
     constructor(props) {
@@ -16,8 +16,9 @@ class List extends React.Component {
     }
 
     hadleClickElem = (id, sel) => {
-        this.setState({ users: this.props.users });
-        this.setState({ selection: sel ? id : null });
+        this.setState({ 
+            selection: sel ? id : null,
+            users: this.props.users });
     }
 
 
@@ -25,7 +26,6 @@ class List extends React.Component {
         if (!this.state.selection) {
             return;
         }
-        console.log(this.state)
         this.setState({
             users: this.state.users.map(u => {
                 if (u.id === this.state.selection && isRightDirrection !== u.isRight) {
