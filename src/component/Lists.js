@@ -4,28 +4,19 @@ import Board from './Board.js';
 import Arrow from './Arrow.js';
 import Elem from './Elem';
 
-let userList = [
-    {
-        id: 1, photo: 'http://icons.iconarchive.com/icons/diversity-avatars/avatars/64/batman-icon.png',
-        name: 'Sam Fisher', isRight: false
-    },
-    {
-        id: 2, photo: 'http://icons.iconarchive.com/icons/diversity-avatars/avatars/64/batman-icon.png',
-        name: 'John Gatsby', isRight: false
-    },
-];
-
 class List extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             selection: null,
-            users: this.props.users
+            users: [],
+            isLoad: false
         }
     }
 
     hadleClickElem = (id, sel) => {
+        this.setState({ users: this.props.users });
         this.setState({ selection: sel ? id : null });
     }
 
@@ -34,7 +25,7 @@ class List extends React.Component {
         if (!this.state.selection) {
             return;
         }
-
+        console.log(this.state)
         this.setState({
             users: this.state.users.map(u => {
                 if (u.id === this.state.selection && isRightDirrection !== u.isRight) {

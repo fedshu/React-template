@@ -3,6 +3,21 @@
     cursor: pointer;
 }
 
+.SectionElem img {
+    border-radius: 50% 50%;
+    width: 73%;
+    padding: 2px;
+}
+
+.SectionElem h3 {   
+    margin: 0;
+}
+
+.SectionElem .SectionName {
+    display: flex;
+    align-items: center;
+}
+
 .SectionElem:hover {
     background: #e5e6e8fa;
 }

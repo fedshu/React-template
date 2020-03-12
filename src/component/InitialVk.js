@@ -40,7 +40,6 @@ callAPI(method, params) {
                     error: data.error
                 });
             } else {
-                console.log(data.response.items)
                 this.setState({
                     isLoaded: true,
                     items: data.response.items
@@ -69,7 +68,7 @@ handleArray() {
         const users = this.handleArray();
         return (
             <div>
-                <List users={users} />
+                <List users={users} isLoaded={this.state.isLoaded}  />
             </div>
         )
     }
