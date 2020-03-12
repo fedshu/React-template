@@ -7,7 +7,6 @@ class Initial extends React.Component {
         super(props);
         this.state = {
             error: null,
-            isLoaded: false,
             items: []
         }
     }
@@ -32,18 +31,12 @@ auth() {
 callAPI(method, params) {
     params.v = "5.76";
 
-    return new Promise(() => {
+    return new Promise((resolve, reject) => {
         VK.api(method, params, (data) => {
             if (data.error) {
-                this.setState({
-                    isLoaded: false,
-                    error: data.error
-                });
+                reject(new Error(data.error));
             } else {
-                this.setState({
-                    isLoaded: true,
-                    items: data.response.items
-                });
+                resolve(this.handleArray(data.response.items));
             }
         });
     });
@@ -51,11 +44,9 @@ callAPI(method, params) {
 
 componentDidMount(){
     this.auth();
-    this.callAPI('friends.get', { fields: 'photo_100' });
 }
 
-handleArray() {
-    let array = this.state.items.slice(0);
+handleArray(array) {
 
     for (let e = 0; e < array.length; e++) {
         array[e].isRight = false
@@ -64,11 +55,14 @@ handleArray() {
     return array;
 }
 
+getFriends = () => {
+    return this.callAPI('friends.get', { fields: 'photo_100' });
+}
+
     render() {
-        const users = this.handleArray();
         return (
             <div>
-                <List users={users} isLoaded={this.state.isLoaded}  />
+                <List getFriends={this.getFriends}  />
             </div>
         )
     }

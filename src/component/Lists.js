@@ -17,8 +17,7 @@ class List extends React.Component {
 
     hadleClickElem = (id, sel) => {
         this.setState({ 
-            selection: sel ? id : null,
-            users: this.props.users
+            selection: sel ? id : null
         });
     }
 
@@ -38,18 +37,22 @@ class List extends React.Component {
         });
     }
 
+    componentDidMount(){
+        this.props.getFriends().then(data => this.setState({users:data}));
+    }
+
     render() {
         return (
 
             <div>
                 <div className="left-board">
                     <Board>
-                        {this.props.users.map(u => !u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
+                        {this.state.users.map(u => !u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
                     </Board>
                 </div>
                 <div className="right-board">
                     <Board>
-                        {this.props.users.map(u => u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
+                        {this.state.users.map(u => u.isRight ? <Elem key={u.id} user={u} onClickAction={this.hadleClickElem} /> : null)}
                     </Board>
                 </div>
 
