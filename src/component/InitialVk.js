@@ -7,12 +7,17 @@ class Initial extends React.Component {
         super(props);
         this.state = {
             error: null,
-            items: []
+            auth: false
         }
     }
 
 
 auth() {
+
+    if (this.state.auth) {
+        return Promise.resolve();
+    }
+
     VK.init({
         apiId: 7356269
       });
@@ -20,6 +25,7 @@ auth() {
     return new Promise( (resolve, reject) => {
         VK.Auth.login(data => {
             if (data.session) {
+                this.setState({auth:true});
                 resolve();
             } else {
                 reject(new Error('Ошибка авторизации'));
@@ -43,7 +49,7 @@ callAPI(method, params) {
 }
 
 componentDidMount(){
-    this.auth();
+    // this.auth();
 }
 
 handleArray(array) {
@@ -56,7 +62,7 @@ handleArray(array) {
 }
 
 getFriends = () => {
-    return this.callAPI('friends.get', { fields: 'photo_100' });
+    return this.auth().then(() => this.callAPI('friends.get', { fields: 'photo_100' }));
 }
 
     render() {
