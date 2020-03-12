@@ -18,7 +18,8 @@ class List extends React.Component {
     hadleClickElem = (id, sel) => {
         this.setState({ 
             selection: sel ? id : null,
-            users: this.props.users });
+            users: this.props.users
+        });
     }
 
 
